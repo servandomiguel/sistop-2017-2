@@ -1,0 +1,27 @@
+Proyecto monitor de sistema, creado con python3 y Gtk3.0.
+
+Para correr el programa se debe ejecutar la siguiente orden y 
+lo siguiente es magia
+
+python3 monitor_system.py
+
+
+El archivo monitor_system.py es el encargado de conectar la interfaz gráfica
+con el modelo de datos, la interfaz grafica esta diseñada en glade. En
+este mismo archivo se encuentra la lógica de actualización de datos, se 
+implemento por medio de un hilo del modulo GObjecto, que actualiza mientras 
+una funcion sea True.
+
+La lógica de los datos esta en el archivo gathering_information.py, ahí se 
+encuentran clases, cada una se encarga de generar información acorde 
+a su nombre, en cada clase hay directicas de sincronización 
+porque se utilizan hilos.
+
+No se usaron hilos desde python3 directamente porque Gtk no soporta hilos 
+externos para manejar su interfaz gráfica.
+
+Para hacer el software lo mas universal posible solo se uso un programa 
+para obtener información y es uno que viene por defecto en el kernel, esto 
+en el caso de los procesos.
+Para los demas casos se utilizaron archivos del sistema, que se encuentran en proc. 
+
